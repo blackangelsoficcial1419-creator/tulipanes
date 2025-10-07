@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tulipanes para Kathe 💜</title>
+  <title>Tulipanes para mi Kathe 💜</title>
   <style>
     /* 🌌 Fondo general */
     body {
