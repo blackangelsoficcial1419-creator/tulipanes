@@ -6,22 +6,20 @@
     <title>Tulipanes para mi Kathe</title>
     
     <style>
-        /* AJUSTES GLOBALES PARA CENTRAR TODO EN LA PANTALLA */
         body {
             margin: 0;
             padding: 0;
             height: 100vh;
             background: radial-gradient(circle at bottom, #3a0ca3 10%, #240046 90%);
             display: flex;
-            flex-direction: column; /* Apila el contenido verticalmente */
-            justify-content: center; /* Centra el contenido verticalmente */
-            align-items: center;     /* Centra el contenido horizontalmente */
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             overflow: hidden;
             font-family: sans-serif;
-            color: #ffffff; /* Color de texto base */
+            color: #ffffff; /
         }
         
-        /* === CONTENEDOR DE FLORES === */
         .garden {
             position: relative;
             display: flex;
@@ -29,22 +27,19 @@
             /* Se elimina el margin-bottom para que Flexbox pueda centrar */
         }
 
-        /* === TEXTO DE AMOR (MOVIDO FUERA DE LAS FLORES) === */
         .love-text-container {
-            /* Mantenemos el texto separado para controlarlo mejor */
             position: relative;
-            z-index: 10; /* Asegura que el texto esté por encima de las flores */
+            z-index: 10;
             text-align: center;
-            /* Posiciona el texto por encima de las flores */
             transform: translateY(15vh); 
-            margin-bottom: -15vh; /* Ajusta el espacio para que las flores suban */
+            margin-bottom: -15vh;
         }
 
         .love-text {
-            font-size: 5vw; /* Usa una unidad relativa para el tamaño de texto */
+            font-size: 5vw;
             font-weight: bold;
             color: #c77dff;
-            line-height: 1.1; /* Reduce el espacio entre líneas */
+            line-height: 1.1;
             text-shadow:
                 0 0 10px #c77dff,
                 0 0 20px #d0a3ff,
@@ -52,8 +47,6 @@
                 0 0 60px #f0d0ff;
             animation: glow 2s ease-in-out infinite alternate;
         }
-
-        /* === CÓDIGO DE TULIPANES Y ANIMACIONES === */
 
         .stem {
             width: 6px;
@@ -68,7 +61,6 @@
 
         .tulip {
             position: absolute;
-            /* La posición de la flor ahora es relativa al tallo */
             bottom: 170px; 
             width: 60px;
             height: 70px;
