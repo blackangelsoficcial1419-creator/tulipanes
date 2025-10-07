@@ -6,26 +6,54 @@
     <title>Tulipanes para mi Kathe</title>
     
     <style>
+        /* AJUSTES GLOBALES PARA CENTRAR TODO EN LA PANTALLA */
         body {
-            /* Fondo general, se ajusta al alto de la pantalla */
             margin: 0;
             padding: 0;
             height: 100vh;
             background: radial-gradient(circle at bottom, #3a0ca3 10%, #240046 90%);
             display: flex;
-            justify-content: center; /* Centra horizontalmente */
-            align-items: flex-end;   /* Mueve las flores hacia abajo */
+            flex-direction: column; /* Apila el contenido verticalmente */
+            justify-content: center; /* Centra el contenido verticalmente */
+            align-items: center;     /* Centra el contenido horizontalmente */
             overflow: hidden;
-            font-family: 'Poppins', sans-serif;
+            font-family: sans-serif;
+            color: #ffffff; /* Color de texto base */
         }
-
-        /* 🌷 Pega aquí el código CSS de los tulipanes (que me enviaste) */
+        
+        /* === CONTENEDOR DE FLORES === */
         .garden {
             position: relative;
             display: flex;
             gap: 60px;
-            margin-bottom: 150px;
+            /* Se elimina el margin-bottom para que Flexbox pueda centrar */
         }
+
+        /* === TEXTO DE AMOR (MOVIDO FUERA DE LAS FLORES) === */
+        .love-text-container {
+            /* Mantenemos el texto separado para controlarlo mejor */
+            position: relative;
+            z-index: 10; /* Asegura que el texto esté por encima de las flores */
+            text-align: center;
+            /* Posiciona el texto por encima de las flores */
+            transform: translateY(15vh); 
+            margin-bottom: -15vh; /* Ajusta el espacio para que las flores suban */
+        }
+
+        .love-text {
+            font-size: 5vw; /* Usa una unidad relativa para el tamaño de texto */
+            font-weight: bold;
+            color: #c77dff;
+            line-height: 1.1; /* Reduce el espacio entre líneas */
+            text-shadow:
+                0 0 10px #c77dff,
+                0 0 20px #d0a3ff,
+                0 0 40px #e0baff,
+                0 0 60px #f0d0ff;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        /* === CÓDIGO DE TULIPANES Y ANIMACIONES === */
 
         .stem {
             width: 6px;
@@ -40,7 +68,8 @@
 
         .tulip {
             position: absolute;
-            bottom: 170px;
+            /* La posición de la flor ahora es relativa al tallo */
+            bottom: 170px; 
             width: 60px;
             height: 70px;
             background: linear-gradient(to top, #ffffff 5%, #c77dff 60%, #7b2cbf 100%);
@@ -73,22 +102,7 @@
             transform: rotate(30deg);
         }
 
-        .love-text {
-            position: absolute;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 48px;
-            font-weight: bold;
-            color: #c77dff;
-            text-shadow:
-                0 0 10px #c77dff,
-                0 0 20px #d0a3ff,
-                0 0 40px #e0baff,
-                0 0 60px #f0d0ff;
-            animation: glow 2s ease-in-out infinite alternate;
-        }
-
+        /* Animaciones */
         @keyframes bloom {
             0% { transform: scale(0.95) translateY(0); }
             50% { transform: scale(1.05) translateY(-5px); }
@@ -114,6 +128,12 @@
     </style>
 </head>
 <body>
+    <div class="love-text-container">
+        <div class="love-text">Para</div>
+        <div class="love-text">mi</div>
+        <div class="love-text">Kathe</div>
+    </div>
+    
     <div class="garden">
         <div class="stem">
             <div class="tulip"></div>
@@ -125,8 +145,7 @@
             <div class="tulip"></div>
             <div class="leaf left"></div>
             <div class="leaf right"></div>
-            <div class="love-text">Para mi Kathe 💖</div> 
-        </div>
+            </div>
 
         <div class="stem">
             <div class="tulip"></div>
